@@ -39,15 +39,15 @@
         }
         
         .page-nav {
-            background-color: rgba(255, 235, 59, 0.1);
-            padding: 15px 25px;
-            border-radius: 30px;
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 12px 20px;
+            border-radius: 15px;
             margin-bottom: 40px;
             position: sticky;
-            top: 20px;
+            top: 10px;
             z-index: 100;
             backdrop-filter: blur(5px);
-            overflow-x: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .page-nav ul {
@@ -55,28 +55,38 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             padding: 0;
+            margin: 0;
         }
         
         .page-nav li {
             margin: 0;
+            flex: 0 1 auto;
         }
         
         .page-nav a {
             color: var(--text);
             text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 8px 12px;
+            border-radius: 12px;
             font-weight: 500;
             transition: all 0.2s;
             background-color: rgba(255, 235, 59, 0.1);
             display: block;
+            text-align: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
         
         .page-nav a:hover {
             background-color: rgba(255, 235, 59, 0.3);
             color: var(--text);
+        }
+        
+        /* Add scroll-margin-top to all sections to fix anchor link positioning */
+        section {
+            scroll-margin-top: 100px;
         }
         
         .container {
@@ -377,20 +387,21 @@
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             h2 {
-                font-size: 1.7rem;
+                font-size: 1.5rem;
             }
             
             h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             
             section {
                 padding: 25px 20px;
                 margin-bottom: 30px;
+                scroll-margin-top: 130px;
             }
             
             .container {
@@ -403,29 +414,30 @@
             }
             
             .page-nav {
-                padding: 10px 15px;
-                margin-bottom: 30px;
-                overflow-x: auto;
-                white-space: nowrap;
+                padding: 10px;
+                margin-bottom: 25px;
+                border-radius: 10px;
             }
             
             .page-nav ul {
-                justify-content: flex-start;
-                flex-wrap: nowrap;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
             }
             
             .page-nav a {
-                padding: 10px 15px; /* Larger touch targets for mobile */
-                font-size: 0.9rem;
+                padding: 8px 5px;
+                font-size: 0.8rem;
+                white-space: nowrap;
             }
             
             .logo-circle {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
             }
             
             .logo-text {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             .tier-card, .grid-item, .stat-card {
@@ -440,37 +452,45 @@
         /* Small mobile devices */
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .document-header {
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
             
             .logo {
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
             
             .logo-circle {
-                width: 40px;
-                height: 40px;
+                width: 35px;
+                height: 35px;
             }
             
             .logo-letter {
-                font-size: 24px;
+                font-size: 20px;
             }
             
             .logo-text {
-                font-size: 24px;
+                font-size: 22px;
             }
             
             .tier-fee, .stat-value {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+            }
+            
+            .page-nav ul {
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .page-nav a {
-                padding: 8px 12px;
-                font-size: 0.85rem;
+                padding: 7px 4px;
+                font-size: 0.75rem;
+            }
+            
+            section {
+                scroll-margin-top: 160px;
             }
         }
     </style>
@@ -489,17 +509,15 @@
         </div>
         
         <nav class="page-nav">
-            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 5px;">
-                <ul>
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#key-messages">Key Messages</a></li>
-                    <li><a href="#launchpads">Launchpads</a></li>
-                    <li><a href="#talking-points">Talking Points</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#links">Links</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#key-messages">Messages</a></li>
+                <li><a href="#launchpads">Launch</a></li>
+                <li><a href="#talking-points">Points</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
         </nav>
         
         <section id="intro">
